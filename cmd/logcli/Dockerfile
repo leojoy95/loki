@@ -5,7 +5,7 @@ COPY . /src/loki
 WORKDIR /src/loki
 RUN make clean && (if [ "${TOUCH_PROTOS}" ]; then make touch-protos; fi) && make BUILD_IN_CONTAINER=false logcli
 
-FROM alpine:3.9
+FROM alpine:3.19.3
 
 RUN apk add --no-cache ca-certificates
 
